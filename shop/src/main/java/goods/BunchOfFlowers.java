@@ -1,4 +1,4 @@
-package goods;
+package Goods;
 
 import service.Service;
 

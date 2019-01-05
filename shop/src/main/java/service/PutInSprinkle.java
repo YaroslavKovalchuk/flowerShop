@@ -1,6 +1,6 @@
 package service;
 
-import Goods.BunchOfFlowers;
+import goods.BunchOfFlowers;
 
 public class PutInSprinkle extends Service {
     public PutInSprinkle(BunchOfFlowers bunchOfFlowers) {

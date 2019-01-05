@@ -1,7 +1,7 @@
 package database;
 
-import Goods.Flower;
-import Goods.Product;
+import goods.Flower;
+import goods.Product;
 
 import java.math.BigDecimal;
 import java.sql.PreparedStatement;

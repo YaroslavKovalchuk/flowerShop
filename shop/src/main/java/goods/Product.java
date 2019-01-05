@@ -1,4 +1,4 @@
-package Goods;
+package goods;
 
 import java.math.BigDecimal;
 

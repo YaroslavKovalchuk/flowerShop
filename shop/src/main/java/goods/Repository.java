@@ -1,26 +1,26 @@
 package goods;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Repository {
-    private HashMap<String,String> map; //name of service, name of flower;
+    private static HashSet<String> types = new HashSet<String>();
 
-
-    public Repository(){
-        map = new HashMap<>();
+    static{
+        types.add("local flower");
+        types.add("Flower from abroad");
     }
 
-    public Repository(HashMap<String, String> map){
-        this.map = map;
+    public static void addTypee(String type){
+        types.add(type);
     }
 
-    public void assignServiceToFlower(String service, String flower){
-        map.put(service,flower);
+    public static void removeType(String removingType){
+        types.remove(removingType);
     }
 
-    public HashMap<String, String> getMap(){
-        return map;
+    public static HashSet<String> getTypes(){
+        return types;
     }
-
 
 }

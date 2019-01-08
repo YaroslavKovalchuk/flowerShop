@@ -1,6 +1,7 @@
 package database;
 
 import goods.Flower;
+import goods.Goods;
 import goods.Product;
 
 import java.math.BigDecimal;
@@ -8,10 +9,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class GoodDB {
 
+    Map<Goods,Integer> goodsList = new HashMap<>();
 
     private PreparedStatement preparedStatement = null;
     private DBWorker dbWorker;
@@ -21,31 +25,17 @@ public class GoodDB {
     private final String INSERT = "INSERT INTO goods VALUES(?,?,?,?)";
     private final String UPDATE = "UPDATE goods SET numbers = ? WHERE id = ?";
     private final String UPDATE_PRICE = "UPDATE goods SET price = ? WHERE id = ?";
-    //private final String INSERT_ALL_service = "INSERT INTO goods_service VALUES(?,?)";
-
-
-    private List<Product> goods = new ArrayList<>();
-
+    
     //Додавання товару до бази даних
-    public boolean addGoodToDB(Product good){
+    public boolean addGoodToDB(Goods goods, int numbers){
         dbWorker  = new DBWorker();
         try {
             dbWorker.getConnection().setAutoCommit(false);
             preparedStatement = dbWorker.getConnection().prepareStatement(INSERT);
-            preparedStatement.setInt(1,good.getId());
-            preparedStatement.setString(2,good.getName());
-            preparedStatement.setBigDecimal(3,good.getPrice());
-            PreparedStatement preparedStatementSO = dbWorker.getConnection().prepareStatement(SELECT_ONE);
-            preparedStatementSO.setObject(1,good.getName());
-            ResultSet resultSet = preparedStatementSO.executeQuery();
-            resultSet.next();
-            if (resultSet.getString(2).equals(good.getName())) preparedStatement.setInt(4,resultSet.getInt(4) +1 );
-            else preparedStatement.setInt(4,1);
-            /*preparedStatement = dbWorker.getConnection().prepareStatement(INSERT_ALL_service);
-            while (good.getServices().iterator().hasNext()){
-                preparedStatement.setInt(1,good.getId());
-                preparedStatement.setInt(2,good.getServices().iterator().next().getId());
-            }*/
+            preparedStatement.setInt(1,goods.getId());
+            preparedStatement.setString(2,goods.getName());
+            preparedStatement.setBigDecimal(3,goods.getPrice());
+            preparedStatement.setInt(4,numbers);
             preparedStatement.execute();
             dbWorker.getConnection().commit();
             return true;
@@ -64,70 +54,58 @@ public class GoodDB {
     }
 
     //отримання товару з бази даних по ід
-    public ArrayList<Product> getGood(int id, int number) {
+    public Goods getGoods(int id) {
+        Goods goods = null;
+        dbWorker  = new DBWorker();
         try {
-            dbWorker.getConnection().prepareStatement(SELECT_ONE);
+            dbWorker.getConnection().setAutoCommit(false);
             preparedStatement = dbWorker.getConnection().prepareStatement(SELECT_ONE);
             preparedStatement.setObject(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
-            if (number <= resultSet.getInt(4)) {
-                ArrayList<Product> arr = new ArrayList<>();
-                for (int i = 0 ; i < number; ++i) {
-                    Product g = new Flower();
-                    g.setId(resultSet.getInt(1));
-                    g.setName(resultSet.getString(2));
-                    g.setPrice(resultSet.getBigDecimal(3));
-                    arr.add(g);
-                }
-                return arr;
-            }
-            else {
-                System.out.println("to much");
-                return null;
-            }
+            goods = new Goods(resultSet.getInt(1),
+                                    new Flower(resultSet.getInt(1),
+                                    resultSet.getString(2),
+                                    resultSet.getBigDecimal(3)));
+            dbWorker.getConnection().commit();
+            dbWorker.getConnection().close();
         } catch (SQLException e) {
             e.printStackTrace();
-            return null;
         }
+        return goods;
 
     }
 
     //Змінення кількості товару
-    public boolean changeNumbersOfGood(int id, int numbers){
+    public boolean changeNumbersOfGoods(int id, int numbers){
         dbWorker = new DBWorker();
-        int curNumber = 0;
+        int currentNumber = 0;
         try {
             dbWorker.getConnection().setAutoCommit(false);
             PreparedStatement preparedStatementSO = dbWorker.getConnection().prepareStatement(SELECT_ONE);
             preparedStatementSO.setObject(1,id);
             ResultSet resultSet = preparedStatementSO.executeQuery();
             resultSet.next();
-            curNumber = resultSet.getInt(4);
-            if(numbers > curNumber){
-                System.out.println("numbers of goods are less then selected");
+            currentNumber = resultSet.getInt(4);
+            if(numbers > currentNumber){
+                System.out.println("numbers of goods are less than selected");
                 return false;
             }
            preparedStatement = dbWorker.getConnection().prepareStatement(UPDATE);
-           preparedStatement.setInt(1, curNumber - numbers);
+           preparedStatement.setInt(1, currentNumber - numbers);
            preparedStatement.setInt(2,id);
            preparedStatement.executeUpdate();
            dbWorker.getConnection().commit();
+            dbWorker.getConnection().close();
            return true;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
-        } finally {
-            try {
-                dbWorker.getConnection().close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
     }
 
     // змінення ціни товару
-    public boolean changePriceOfGood(int id, int interestedRate){
+    public boolean changePriceOfGoods(int id, BigDecimal newCost){
         dbWorker = new DBWorker();
         try {
             dbWorker.getConnection().setAutoCommit(false);
@@ -137,46 +115,37 @@ public class GoodDB {
             preparedStatementSO.setObject(1, id);
             ResultSet resultSet = preparedStatementSO.executeQuery();
             resultSet.next();
-            preparedStatement.setBigDecimal(2, (resultSet.getBigDecimal(2).multiply(BigDecimal.valueOf(interestedRate
-                    / 100))));
+            preparedStatement.setBigDecimal(2, newCost);
             preparedStatement.executeUpdate();
             dbWorker.getConnection().commit();
+            dbWorker.getConnection().close();
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
-        } finally {
-            try {
-                dbWorker.getConnection().close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
     }
 
     //отримання всі товарів з бази даних
-    public void showAllGoodsFormDB(){
+    public Map<Goods,Integer> getAllGoodsFormDB(){
             dbWorker  = new DBWorker();
             try {
                 dbWorker.getConnection().setAutoCommit(false);
                 preparedStatement = dbWorker.getConnection().prepareStatement(SELECT_ALL);
                 ResultSet resultSet = preparedStatement.executeQuery();
                 while (resultSet.next()) {
-                    System.out.println(resultSet.getInt(1) + "  " + resultSet.getString(2) + "  " +
-                            resultSet.getBigDecimal(3) + "  " +
-                            resultSet.getInt(4));
-                }
+                    Goods goods = new Goods(resultSet.getInt(1),
+                            new Flower(resultSet.getInt(1),
+                                    resultSet.getString(2),
+                                    resultSet.getBigDecimal(3)));
+                goodsList.put(goods,resultSet.getInt(4));
+            }
                 dbWorker.getConnection().commit();
+                dbWorker.getConnection().close();
             } catch (SQLException e ) {
                 e.printStackTrace();
             }
-            finally {
-                try {
-                    dbWorker.getConnection().close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
+            return goodsList;
+    }
 }
 

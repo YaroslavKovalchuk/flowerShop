@@ -2,24 +2,27 @@ package store;
 
 import database.CustomerDB;
 import database.GoodDB;
+import goods.Goods;
 import personalData.Customer;
-import service.Service;
-import storeService.CreditPayment;
-import storeService.Discaunt;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
-public class OnlineStore extends Store implements CreditPayment, Discaunt {
+public class OnlineStore extends Store {
 
     private String website;
-    private List<Customer> customers = new ArrayList<>();
+    GoodDB goodDB = new GoodDB();
     CustomerDB customerDB = new CustomerDB();
 
     public OnlineStore(String name, String website) {
         super(name);
         this.website = website;
+    }
+
+    //Вивід катологу товарів на консоль
+    public void showAllGoods(){
+        for (Goods g:goodDB.getAllGoodsFormDB().keySet()) {
+            System.out.println(g.toString());
+        }
     }
 
     public String getWebsite() {
@@ -44,23 +47,5 @@ public class OnlineStore extends Store implements CreditPayment, Discaunt {
         return customerDB.getCustomerFromDB(login,password);
     }
 
-    @Override
-    public BigDecimal payByCreditCard(int idGoods, int numbers, Service service, String cardNumber) {
-         BigDecimal resultPrice = null;
-        GoodDB goodDB = new GoodDB();
-        CustomerDB customerDB = new CustomerDB();
-        for (Customer c: customerDB.getAllCustomerFormDB()) {
-            if (c.getCardNumber().equals(cardNumber)){
-                goodDB.changeNumbersOfGood(idGoods, numbers);
-                resultPrice = goodDB.getGood(idGoods, numbers).get(0).getPrice().multiply(BigDecimal.valueOf(numbers)).add(service.getPrice())
-                        .multiply(BigDecimal.valueOf(numbers));
-            }else resultPrice = null;
-        }
-        return resultPrice;
-    }
 
-    @Override
-    public boolean addDiscaunt(int idGoods, int interesRate) {
-        return new GoodDB().changePriceOfGood(idGoods,interesRate);
-    }
 }

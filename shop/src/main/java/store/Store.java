@@ -2,16 +2,23 @@ package store;
 
 import database.EmployeeDB;
 import database.GoodDB;
+import goods.Goods;
 import personalData.Employee;
+import store.serviceDiscount.DiscountMethodFactory;
+import store.servicePayment.Bill;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class Store {
+public abstract class Store {
 
     private String name;
-    private Employee employee = new Employee();
-    private GoodDB goodDB;
-    protected EmployeeDB employeeDB = new EmployeeDB();
+    private GoodDB goodDB = new GoodDB();
+    private Map<Goods,Integer> goodsList = new HashMap<>();
+    private EmployeeDB employeeDB = new EmployeeDB();
+
+    private Bill bill;
 
     public Store(String name) {
         this.name = name;
@@ -23,6 +30,14 @@ public class Store {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public boolean addGoods(Goods goods,int numbers){
+        return goodDB.addGoodToDB(goods,numbers);
+    }
+
+    public Map<Goods,Integer> getGoodsList(){
+        return goodDB.getAllGoodsFormDB();
     }
 
     public List<Employee> getEmployees() {
@@ -37,5 +52,8 @@ public class Store {
         return employeeDB.getEmploeeFromDB(id);
     }
 
+    public Bill createBill() {
+        return new Bill();
+    }
 
 }

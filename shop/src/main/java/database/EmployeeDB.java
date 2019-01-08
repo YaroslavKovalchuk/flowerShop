@@ -49,7 +49,7 @@ public class EmployeeDB {
     }
 
     //Отримання працівника з бази даних по ід
-    public Employee getEmploeeFromDB(int id){
+    public Employee getEmploeeFromDB(int id) {
         dbWorker  = new DBWorker();
         try {
             dbWorker.getConnection().setAutoCommit(false);
@@ -63,15 +63,9 @@ public class EmployeeDB {
             employee.setPosition(resultSet.getString(3));
             employee.setSalary(resultSet.getDouble(4));
             dbWorker.getConnection().commit();
+            dbWorker.getConnection().close();
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-        finally {
-            try {
-                dbWorker.getConnection().close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
         return employee;
     }

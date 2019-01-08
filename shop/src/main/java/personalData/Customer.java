@@ -1,22 +1,24 @@
 package personalData;
 
+import store.servicePayment.Card;
+
 public class Customer {
 
     private int id;
     private String name;
     private String login;
     private String password;
-    private String cardNumber;
+    private Card card;
 
     public Customer() {
     }
 
-    public Customer(int id, String name, String login, String password, String cardNumber) {
+    public Customer(int id, String name, String login, String password, Card cardNumber) {
         this.id = id;
         this.name = name;
         this.login = login;
         this.password = password;
-        this.cardNumber = cardNumber;
+        this.card = cardNumber;
     }
 
     public int getId() {
@@ -51,13 +53,14 @@ public class Customer {
         this.password = password;
     }
 
-    public String getCardNumber() {
-        return cardNumber;
+    public Card getCard() {
+        return card;
     }
 
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
+    public void setCard(Card card) {
+        this.card = card;
     }
+
 
     @Override
     public String toString() {
@@ -66,7 +69,7 @@ public class Customer {
                 ", name='" + name + '\'' +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
-                ", cardNumber='" + cardNumber + '\'' +
+                ", cardNumber='" + card.getNumber() + '\'' +
                 '}';
     }
 }

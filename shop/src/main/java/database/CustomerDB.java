@@ -32,7 +32,7 @@ public class CustomerDB {
             preparedStatement.setString(2,customer.getName());
             preparedStatement.setString(3,customer.getLogin());
             preparedStatement.setString(4,customer.getPassword());
-            preparedStatement.setString(5,customer.getCardNumber());
+            preparedStatement.setString(5,customer.getCard().getNumber());
             preparedStatement.execute();
             dbWorker.getConnection().commit();
             return true;
@@ -65,7 +65,7 @@ public class CustomerDB {
             customer.setName(resultSet.getString(2));
             customer.setLogin(resultSet.getString(3));
             customer.setPassword(resultSet.getString(4));
-            customer.setCardNumber(resultSet.getString(5));
+
             dbWorker.getConnection().commit();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -79,6 +79,7 @@ public class CustomerDB {
         }
        return customer;
     }
+
     // отримання списку всіх кілєнтів
     public List<Customer> getAllCustomerFormDB(){
         dbWorker  = new DBWorker();
@@ -92,7 +93,7 @@ public class CustomerDB {
                 c.setName(resultSet.getString(2));
                 c.setLogin(resultSet.getString(3));
                 c.setPassword(resultSet.getString(4));
-                c.setCardNumber(resultSet.getString(5));
+
                 customers.add(c);
             }
             dbWorker.getConnection().commit();

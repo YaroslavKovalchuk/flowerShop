@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ServiceDB {
+
     private PreparedStatement preparedStatement = null;
     private DBWorker dbWorker;
 
@@ -33,19 +34,11 @@ public class ServiceDB {
             preparedStatement.setBigDecimal(4,price);
             preparedStatement.execute();
             dbWorker.getConnection().commit();
+            dbWorker.getConnection().close();
             return true;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
-        finally {
-            try {
-                dbWorker.getConnection().close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-                return false;
-            }
-        }
     }
-
 }

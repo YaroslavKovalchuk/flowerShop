@@ -72,7 +72,7 @@ public class GoodDB {
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             if (number <= resultSet.getInt(4)) {
-                ArrayList<Product> arr = new ArrayList<>();
+                ArrayList<Product> arr = new ArrayList<Product>();
                 for (int i = 0 ; i < number; ++i) {
                     Product g = new Flower();
                     g.setId(resultSet.getInt(1));

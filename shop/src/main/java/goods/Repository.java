@@ -7,7 +7,7 @@ public class Repository {
 
 
     public Repository(){
-        map = new HashMap<>();
+        map = new HashMap<String, String>();
     }
 
     public Repository(HashMap<String, String> map){

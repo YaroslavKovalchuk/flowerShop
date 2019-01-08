@@ -1,4 +1,4 @@
-package goods.Properties;
+package goods.properties;
 
 public class Thorns implements  FlowersProperty{
 

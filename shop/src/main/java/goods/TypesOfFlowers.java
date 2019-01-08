@@ -3,7 +3,7 @@ package goods;
 import java.util.HashSet;
 
 public class TypesOfFlowers {
-    private static HashSet<String> types = new HashSet<>();
+    private static HashSet<String> types = new HashSet<String>();
 
     static{
         types.add("local flower");

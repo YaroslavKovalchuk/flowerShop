@@ -1,6 +1,6 @@
 package goods;
 
-import goods.Properties.FlowersProperty;
+import goods.properties.FlowersProperty;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

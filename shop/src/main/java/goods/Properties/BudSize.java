@@ -1,4 +1,4 @@
-package goods.properties;
+package goods.Properties;
 
 public class BudSize implements FlowersProperty{
 

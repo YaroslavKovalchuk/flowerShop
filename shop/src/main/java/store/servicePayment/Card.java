@@ -1,4 +1,4 @@
-package store.servicePayment;
+package main.java.store.servicePayment;
 
 import java.math.BigDecimal;
 
@@ -43,7 +43,7 @@ public class Card implements PaymentMethod {
 
     @Override
     public void pay(BigDecimal money) {
-        System.out.println("Payed " + money + " using " + toString());
+        System.out.println("Payed " + money + " using " + toString() + "\n");
     }
 
     @Override

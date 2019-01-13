@@ -1,9 +1,9 @@
-package store.servicePayment;
+package main.java.store.servicePayment;
 
 import java.math.BigDecimal;
 
 public interface PaymentMethod {
 
-    public void pay(BigDecimal money);
+    void pay(BigDecimal money);
 
 }

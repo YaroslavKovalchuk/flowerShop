@@ -1,4 +1,4 @@
-package store.serviceDiscount;
+package main.java.store.serviceDiscount;
 
 import java.math.BigDecimal;
 
@@ -18,9 +18,9 @@ public class DiscountMethodFactory {
 
     public BigDecimal applyDiscount(BigDecimal cost){
 
-        if (sumForHighDiscount.compareTo(cost) == 1){
+        if (sumForHighDiscount.compareTo(cost) < 1){
             setStrategy(new HighDiscountStrategy());
-        }else if (sumForLowDiscount.compareTo(cost) == 1){
+        }else if (sumForLowDiscount.compareTo(cost) < 1){
            setStrategy(new LowDiscountStrategy());
         }else setStrategy(new NoDiscountStrategy());
 

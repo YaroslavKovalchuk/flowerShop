@@ -1,7 +1,7 @@
-package database;
+package main.java.database;
 
 
-import personalData.Customer;
+import main.java.personalData.Customer;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,6 +13,7 @@ public class CustomerDB {
 
     private PreparedStatement preparedStatement = null;
     private DBWorker dbWorker;
+    private CreditCardDB creditCardDB = new CreditCardDB();
 
     private final String SELECT_ALL = "SELECT * FROM customer";
     private final String SELECT_ONE = "SELECT * FROM customer WHERE login= ? AND password = ?";
@@ -65,7 +66,7 @@ public class CustomerDB {
             customer.setName(resultSet.getString(2));
             customer.setLogin(resultSet.getString(3));
             customer.setPassword(resultSet.getString(4));
-
+            customer.setCard(creditCardDB.getCreditCardFromDB(resultSet.getString(5)));
             dbWorker.getConnection().commit();
         } catch (SQLException e) {
             e.printStackTrace();

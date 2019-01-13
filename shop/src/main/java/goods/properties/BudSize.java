@@ -1,4 +1,4 @@
-package goods.properties;
+package main.java.goods.properties;
 
 public class BudSize implements FlowersProperty{
 

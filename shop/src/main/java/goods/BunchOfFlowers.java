@@ -1,6 +1,6 @@
-package goods;
+package main.java.goods;
 
-import service.Service;
+import main.java.service.Service;
 import java.util.ArrayList;
 
 public class BunchOfFlowers extends Product{

@@ -1,7 +1,7 @@
-package store.serviceDiscount;
+package main.java.store.serviceDiscount;
 
 import java.math.BigDecimal;
 
 public interface DiscountStrategy  {
-    public BigDecimal getFinalCost(BigDecimal cost);
+    BigDecimal getFinalCost(BigDecimal cost);
 }

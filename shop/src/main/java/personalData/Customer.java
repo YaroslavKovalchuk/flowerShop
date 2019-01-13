@@ -1,6 +1,6 @@
-package personalData;
+package main.java.personalData;
 
-import store.servicePayment.Card;
+import main.java.store.servicePayment.Card;
 
 public class Customer {
 
@@ -66,10 +66,12 @@ public class Customer {
     public String toString() {
         return "Customer{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", cardNumber='" + card.getNumber() + '\'' +
+                ", NAME='" + name + '\'' +
+                ", LOGIN='" + login + '\'' +
+                ", PASSWORD='" + password + '\'' +
+                ", CARD NUMBER='" + card.getNumber() + '\'' +
+                ", CARD CVV='" + card.getCvv() + '\'' +
+                ", CARD DATE='" + card.getExpirationDate() + '\'' +
                 '}';
     }
 }

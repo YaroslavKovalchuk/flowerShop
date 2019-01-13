@@ -1,7 +1,7 @@
-package database;
+package main.java.database;
 
 
-import service.Service;
+import main.java.service.Service;
 
 import java.math.BigDecimal;
 import java.sql.PreparedStatement;

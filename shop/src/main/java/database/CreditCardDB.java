@@ -1,7 +1,7 @@
-package database;
+package main.java.database;
 
-import personalData.Customer;
-import store.servicePayment.Card;
+import main.java.personalData.Customer;
+import main.java.store.servicePayment.Card;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -55,12 +55,10 @@ public class CreditCardDB {
                     resultSet.getString(3),
                     resultSet.getString(4),
                     resultSet.getString(5));
-            dbWorker.getConnection().close();
             dbWorker.getConnection().commit();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return card;
     }
 

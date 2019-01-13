@@ -1,9 +1,9 @@
-package store;
+package main.java.store;
 
-import database.CustomerDB;
-import database.GoodDB;
-import goods.Goods;
-import personalData.Customer;
+import main.java.database.CustomerDB;
+import main.java.database.GoodDB;
+import main.java.goods.Goods;
+import main.java.personalData.Customer;
 
 import java.util.List;
 

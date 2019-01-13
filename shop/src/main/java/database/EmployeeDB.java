@@ -1,6 +1,6 @@
-package database;
+package main.java.database;
 
-import personalData.Employee;
+import main.java.personalData.Employee;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

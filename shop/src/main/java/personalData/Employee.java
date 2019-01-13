@@ -1,4 +1,4 @@
-package personalData;
+package main.java.personalData;
 
 public class Employee {
 

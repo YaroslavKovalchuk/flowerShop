@@ -1,8 +1,8 @@
-package database;
+package main.java.database;
 
-import goods.Flower;
-import goods.Goods;
-import goods.Product;
+
+import main.java.goods.Flower;
+import main.java.goods.Goods;
 
 import java.math.BigDecimal;
 import java.sql.PreparedStatement;

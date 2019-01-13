@@ -1,10 +1,7 @@
-package store.servicePayment;
+package main.java.store.servicePayment;
 
-import database.GoodDB;
-import goods.Goods;
-import store.serviceDiscount.DiscountMethodFactory;
-import store.serviceDiscount.HighDiscountStrategy;
-import store.serviceDiscount.LowDiscountStrategy;
+import main.java.goods.Goods;
+import main.java.store.serviceDiscount.DiscountMethodFactory;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -25,9 +22,10 @@ public class Bill {
         lineItems.remove(lineItem);
     }
 
+
     public BigDecimal getCost(){
         for (Goods g:lineItems) {
-            sum.add(g.getPrice());
+          sum = sum.add(g.getPrice());
         }
         return discountMethodFactory.applyDiscount(sum);
     }

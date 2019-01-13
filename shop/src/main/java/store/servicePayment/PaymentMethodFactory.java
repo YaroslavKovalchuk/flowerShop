@@ -1,6 +1,6 @@
-package store.servicePayment;
+package main.java.store.servicePayment;
 
-import personalData.Customer;
+import main.java.personalData.Customer;
 
 public class PaymentMethodFactory {
 

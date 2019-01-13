@@ -1,6 +1,6 @@
-package service;
+package main.java.service;
 
-import goods.BunchOfFlowers;
+import main.java.goods.BunchOfFlowers;
 
 public class MakeBouquet extends Service {
 

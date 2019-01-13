@@ -1,11 +1,11 @@
-package store;
+package main.java.store;
 
-import database.EmployeeDB;
-import database.GoodDB;
-import goods.Goods;
-import personalData.Employee;
-import store.serviceDiscount.DiscountMethodFactory;
-import store.servicePayment.Bill;
+import main.java.database.EmployeeDB;
+import main.java.database.GoodDB;
+import main.java.goods.Goods;
+import main.java.personalData.Employee;
+import main.java.store.serviceDiscount.DiscountMethodFactory;
+import main.java.store.servicePayment.Bill;
 
 import java.util.HashMap;
 import java.util.List;

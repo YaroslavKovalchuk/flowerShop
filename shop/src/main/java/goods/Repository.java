@@ -1,4 +1,4 @@
-package goods;
+package main.java.goods;
 
 import java.util.HashSet;
 

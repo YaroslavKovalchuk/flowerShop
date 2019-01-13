@@ -2,36 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c4ecf33-7f9b-40b3-a7f7-2419f116c6a8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/shop/src/main/java/serviceDecorator/MakeBouquet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/src/main/java/serviceDecorator/PutInPot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/src/main/java/serviceDecorator/PutInSprinkle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/src/main/java/serviceDecorator/PutInWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/src/main/java/serviceDecorator/ServiceDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/56d460dd-05db-4480-8017-c05344d33a8e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/56d460dd-05db-4480-8017-c05344d33a8e.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/database/CreditCardDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/database/CreditCardDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/database/GoodDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/database/GoodDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/database/ServiceDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/database/ServiceDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/goods/BunchOfFlowers.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/goods/BunchOfFlowers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/goods/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/goods/Equipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/goods/Flower.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/goods/Flower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/goods/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/goods/Goods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/goods/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/goods/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/goods/Repository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/goods/TypesOfFlowers.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/goods/TypesOfFlowers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/personalData/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/personalData/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/service/MakeBouquet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/service/PutInPot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/service/PutInSprinkle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/service/PutInWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/service/Service.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/store/OnlineStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/store/OnlineStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/store/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/store/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/store/serviceDiscount/DiscountMethodFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/store/serviceDiscountStrategy/DiscountMethodFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/store/serviceDiscount/DiscountStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/store/serviceDiscountStrategy/DiscountStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/store/serviceDiscount/HighDiscountStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/store/serviceDiscountStrategy/HighDiscountStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/store/serviceDiscount/LowDiscountStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/store/serviceDiscountStrategy/LowDiscountStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/store/serviceDiscount/NoDiscountStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/store/serviceDiscountStrategy/NoDiscountStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/store/servicePayment/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/store/servicePaymentStrategy/Bill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/store/servicePayment/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/store/servicePaymentStrategy/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/store/servicePayment/Cash.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/store/servicePaymentStrategy/Cash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/store/servicePayment/PaymentMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/store/servicePaymentStrategy/PaymentMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/main/java/store/servicePayment/PaymentMethodFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/main/java/store/servicePaymentStrategy/PaymentMethodFactory.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/shop/target/" />
@@ -345,14 +322,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="flowerShop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flowerShop" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="serviceDecorator" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -363,7 +332,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547394336712" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547398014263" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="E:/курси" />
@@ -447,7 +416,7 @@
       <workItem from="1547390790303" duration="1707000" />
       <workItem from="1547392613126" duration="1725000" />
       <workItem from="1547394451866" duration="1636000" />
-      <workItem from="1547396298965" duration="1586000" />
+      <workItem from="1547396298965" duration="1739000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1546690871372</created>
@@ -533,15 +502,21 @@
       <option name="project" value="LOCAL" />
       <updated>1547385371590</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add decorator">
+      <created>1547397939830</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1547397939830</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47698000" />
+    <option name="totallyTimeSpent" value="47851000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.38199696" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -590,7 +565,8 @@
     <MESSAGE value="add payment and discount strategy" />
     <MESSAGE value="add" />
     <MESSAGE value="add new package" />
-    <option name="LAST_COMMIT_MESSAGE" value="add new package" />
+    <MESSAGE value="add decorator" />
+    <option name="LAST_COMMIT_MESSAGE" value="add decorator" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/dataSources.xml">

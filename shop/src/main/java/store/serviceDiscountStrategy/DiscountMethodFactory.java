@@ -1,4 +1,4 @@
-package main.java.store.serviceDiscount;
+package main.java.store.serviceDiscountStrategy;
 
 import java.math.BigDecimal;
 
@@ -16,6 +16,7 @@ public class DiscountMethodFactory {
         this.strategy = strategy;
     }
 
+    //вибір знижки в залежності від загальної суми рахунку
     public BigDecimal applyDiscount(BigDecimal cost){
 
         if (sumForHighDiscount.compareTo(cost) < 1){

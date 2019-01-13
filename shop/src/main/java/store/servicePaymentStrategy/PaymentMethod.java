@@ -1,4 +1,4 @@
-package main.java.store.servicePayment;
+package main.java.store.servicePaymentStrategy;
 
 import java.math.BigDecimal;
 

@@ -10,19 +10,11 @@ import java.util.List;
 public class OnlineStore extends Store {
 
     private String website;
-    GoodDB goodDB = new GoodDB();
     CustomerDB customerDB = new CustomerDB();
 
     public OnlineStore(String name, String website) {
         super(name);
         this.website = website;
-    }
-
-    //Вивід катологу товарів на консоль
-    public void showAllGoods(){
-        for (Goods g:goodDB.getAllGoodsFormDB().keySet()) {
-            System.out.println(g.toString());
-        }
     }
 
     public String getWebsite() {
@@ -33,15 +25,18 @@ public class OnlineStore extends Store {
         this.website = website;
     }
 
+    // отримання списку всіх користувачів
     public List<Customer> getCustomers() {
         return customerDB.getAllCustomerFormDB();
     }
 
+    //реєстрація користувача
     public boolean singUp(Customer customer){
 
         return customerDB.addCustomerToDB(customer);
     }
 
+    //вхід користувача
     public Customer singIn(String login, String password){
 
         return customerDB.getCustomerFromDB(login,password);

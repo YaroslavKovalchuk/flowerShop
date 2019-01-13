@@ -1,9 +1,8 @@
-package main.java.store.servicePayment;
+package main.java.store.servicePaymentStrategy;
 
 import java.math.BigDecimal;
 
 public class Cash implements PaymentMethod{
-
 
     @Override
     public void pay(BigDecimal money) {

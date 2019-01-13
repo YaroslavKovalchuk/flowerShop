@@ -1,4 +1,4 @@
-package main.java.store.serviceDiscount;
+package main.java.store.serviceDiscountStrategy;
 
 import java.math.BigDecimal;
 

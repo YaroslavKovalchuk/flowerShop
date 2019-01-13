@@ -3,9 +3,11 @@ package main.java.goods;
 import java.math.BigDecimal;
 
 public abstract class Product {
-    protected int id;
-    protected String name;
-    protected BigDecimal price;
+
+    private int id;
+    private String name;
+    private BigDecimal price = new BigDecimal(0);
+    private String type;
 
     public int getId() {
         return id;
@@ -28,4 +30,11 @@ public abstract class Product {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
+
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type){this.type = type;}
 }

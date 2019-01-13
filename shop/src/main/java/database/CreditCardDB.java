@@ -1,7 +1,6 @@
 package main.java.database;
 
-import main.java.personalData.Customer;
-import main.java.store.servicePayment.Card;
+import main.java.store.servicePaymentStrategy.Card;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

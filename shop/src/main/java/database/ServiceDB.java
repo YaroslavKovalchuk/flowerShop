@@ -1,7 +1,7 @@
 package main.java.database;
 
 
-import main.java.service.Service;
+import main.java.serviceDecorator.ServiceDecorator;
 
 import java.math.BigDecimal;
 import java.sql.PreparedStatement;
@@ -14,12 +14,12 @@ public class ServiceDB {
     private PreparedStatement preparedStatement = null;
     private DBWorker dbWorker;
 
-    private final String SELECT_ALL = "SELECT * FROM service";
-    private final String SELECT_ONE = "SELECT * FROM service WHERE id = ?";
+    private final String SELECT_ALL = "SELECT * FROM serviceDecorator";
+    private final String SELECT_ONE = "SELECT * FROM serviceDecorator WHERE id = ?";
     private final String INSERT = "INSERT INTO service VALUES(?,?,?,?)";
 
-    private Service service;
-    private List<Service> services = new ArrayList<>();
+    private ServiceDecorator serviceDecorator;
+    private List<ServiceDecorator> serviceDecorators = new ArrayList<>();
 
 
     //Додавання сервісу до бази даних

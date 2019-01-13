@@ -1,6 +1,6 @@
 package main.java.personalData;
 
-import main.java.store.servicePayment.Card;
+import main.java.store.servicePaymentStrategy.Card;
 
 public class Customer {
 

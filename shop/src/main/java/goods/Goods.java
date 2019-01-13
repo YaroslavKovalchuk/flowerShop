@@ -1,8 +1,11 @@
 package main.java.goods;
 
+import main.java.database.GoodDB;
+
 import java.math.BigDecimal;
 
 public class Goods {
+
     private int id;
     private Product product;
 
@@ -11,17 +14,8 @@ public class Goods {
         this.product = product;
     }
 
-
     public int getId() {
         return id;
-    }
-
-    public Product getGoods() {
-        return product;
-    }
-
-    public void setGoods(Product goods) {
-        this.product = goods;
     }
 
     public String getName() {

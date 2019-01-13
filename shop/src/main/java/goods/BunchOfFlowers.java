@@ -1,45 +1,31 @@
 package main.java.goods;
 
-import main.java.service.Service;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BunchOfFlowers extends Product{
-    private ArrayList<Flower> flowers;
-    private ArrayList<Service> services;
+
+    private List<Flower> flowers;
 
     public BunchOfFlowers(){
         flowers = new ArrayList<Flower>();
-        services = new ArrayList<Service>();
     }
 
-    public BunchOfFlowers(int id, String name, ArrayList<Flower> flowers, ArrayList<Service> services) {
-        this.id = id;
-        this.name = name;
+    public BunchOfFlowers(int id, String name, List<Flower> flowers) {
+        setId(id);
+        setName(name);
         this.flowers = flowers;
-        this.services = services;
         for (Flower f : flowers){
-            price.add(f.getPrice());
+            setPrice(getPrice().add(f.getPrice()));
         }
-        for (Flower f : flowers) price.add(f.getPrice());
-        for (Service s : services) price.add(s.getPrice());
     }
 
-    public ArrayList<Flower> getFlowers() {
+    public List<Flower> getFlowers() {
         return flowers;
-    }
-
-
-    public ArrayList<Service> getServices() {
-        return services;
-    }
-
-    public void addService(Service service){
-        services.add(service);
-        price.add(service.getPrice());
     }
 
     public void addFlower(Flower flower) {
         flowers.add(flower);
-        price.add(flower.getPrice());
+        setPrice(getPrice().add(flower.getPrice()));
     }
 }
